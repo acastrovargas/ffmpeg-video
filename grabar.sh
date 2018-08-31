@@ -1,13 +1,4 @@
 #!/bin/bash
-#
-# Author        :Julio Sanz
-# Website       :www.elarraydejota.com
-# Email         :juliojosesb@gmail.com
-# Description   :Script to record video/audio with ffmpeg
-# Dependencies  :pulseaudio, ffmpeg
-# Usage         :./record.sh filename format
-# License       :GPLv3
-#
 
 #
 # VARIABLES
