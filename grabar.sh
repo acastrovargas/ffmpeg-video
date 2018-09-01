@@ -37,45 +37,16 @@ record_mp4(){
         -y $video_folder/$record_file
 }
 
-record_mp3(){
-    echo " >> Recording mp3 audio, press Ctrl+C or 'q' to finish"
-    ffmpeg -loglevel fatal \
-        -f pulse \
-        -i $input_audio \
-        -acodec libmp3lame \
-        -qscale:a 4 \
-        -y $audio_folder/$record_file
-}
 
-record_ogg(){
-    echo " >> Recording ogg audio, press Ctrl+C or 'q' to finish"
-    ffmpeg -loglevel fatal \
-        -f pulse \
-        -i $input_audio \
-        -acodec libvorbis \
-        -qscale:a 5 \
-        -y $audio_folder/$record_file
-}
-
-record_wav(){
-    echo " >> Recording wav audio, press Ctrl+C or 'q' to finish"
-    ffmpeg -loglevel fatal \
-        -f pulse \
-        -i $input_audio \
-        -y $audio_folder/$record_file
-}
 
 how_to_use(){
     echo "Usage: $0 filename format"
     echo "Record video/audio in filename with the specified format"
     echo ""
-    echo "Options for format:"
-    echo "  -mp3         Record audio in mp3 format"
-    echo "  -ogg         Record audio in ogg format"
-    echo "  -wav         Record audio in wav format"
-    echo "  -mp4         Record video and audio in mp4 format"
+    echo "Opciones de formatos:"   
+    echo "  -mp4         Grabar video and audio in mp4 format"
     echo ""
-    echo "Example: ./record.sh myfirstvideo mp4"
+    echo "Example: ./record.sh primer_video mp4"
 }
 
 #
@@ -86,10 +57,7 @@ if [ $# -ne 2 ];then
     how_to_use
 else
     case $format in
-        "mp4") record_mp4 ;;
-        "mp3") record_mp3 ;;
-        "ogg") record_ogg ;;
-        "wav") record_wav ;;
+        "mp4") record_mp4 ;;        
         *) how_to_use ;;
     esac
 fi
