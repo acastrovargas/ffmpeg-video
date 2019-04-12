@@ -21,7 +21,7 @@ v_display="$DISPLAY"
 #
 
 record_mp4(){
-    echo " >> Grabando video y audio, press Ctrl+C or 'q' to finish"
+    echo " >> Grabando video y audio, presione Ctrl+C or 'q' para finalizar"
     sleep 5s
     ffmpeg -loglevel fatal \
         -thread_queue_size 512 \
@@ -44,7 +44,7 @@ how_to_use(){
     echo "Record video/audio in filename with the specified format"
     echo ""
     echo "Opciones de formatos:"   
-    echo "  -mp4         Grabar video and audio in mp4 format"
+    echo "  -mp4         Grabar video y audio en mp4 formato"
     echo ""
     echo "Example: ./record.sh primer_video mp4"
 }
